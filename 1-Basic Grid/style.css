@@ -1,0 +1,54 @@
+
+
+/* extremely basic formatting */
+body {
+  font-family: "Libre Franklin", sans-serif;
+  line-height: 1.5;
+}
+/* make image flex with container */
+img {
+  max-width: 100%;
+}
+/* remove default margin/padding */
+/* figure {
+  margin: 0;
+  padding: 0;
+} */
+
+.grid-container {
+  display: grid;
+  /* grid-template-columns: 1fr 1fr 1fr 1fr; */
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto auto;
+  gap: 1rem 2rem;
+}
+
+figure {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  /* grid-template-rows: 1fr 1fr 1fr; */
+  gap: 2rem;
+  align-items: center;
+  border: 2px solid black;
+}
+
+.grid-container :nth-child(3) {
+  grid-column: 1 / 2;
+  grid-row: 1 / 4;
+  display: block;
+}
+
+figcaption {
+  border: 2px dotted blue;
+}
+
+/* Your HTML uses a .grid-container div to hold four <figure> elements, each with an <img> and a <figcaption>. The CSS sets up .grid-container as a grid with two columns and three rows, so the figures are arranged in a 2x3 grid (though you have four figures, so the last one wraps to the next row).
+
+Each <figure> is also a grid with two columns, so its image and caption are laid out side by side. The commented-out grid-template-rows in figure means the rows are sized automatically based on content.
+
+The selector .grid-container :nth-child(3) targets the third child inside .grid-container (the third <figure>), making it span from the first to the fourth row and only the first column. This visually highlights the third figure by making it taller and more prominent in the grid.
+
+The figcaption style adds a dotted blue border to captions, making them stand out visually.
+
+Overall, the CSS grid logic matches the HTML structure: the container arranges figures in a grid, each figure arranges its image and caption, and the third figure is given special grid placement to emphasize it. */
+
